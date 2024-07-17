@@ -10,16 +10,17 @@
 .art {
     line-height: 120%;
     font-size: 16px;
-    user-select: none;
-    max-width: 400px;
+    /*user-select: none;*/
+    /*max-width: 400px;*/
 }
 
 .title {
     margin-top: 36px;
 
     font-family: "JetBrains Mono", sans-serif;
-    font-size: 64px;
+    font-size: 16px;
     font-weight: lighter;
+    /*max-width: 150px;*/
 }
 
 .cards {
