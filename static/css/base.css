@@ -53,12 +53,14 @@ table {
 :root {
     --main-green: #137C1D;
     --background-color: black;
+    --main-red: #8C3941;
 }
 
 a {
     text-decoration: none;
     color: var(--main-green);
 }
+
 
 body {
     color: var(--main-green);

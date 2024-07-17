@@ -1,0 +1,38 @@
+.tool-container {
+    display: block;
+    margin-top: 40px;
+}
+
+.search {
+    margin-top: 32px;
+    color: var(--main-green);
+    min-width: 500px;
+    padding: 14px 20px;
+    border: var(--main-green) 1px solid;
+    background-color: var(--background-color);
+    outline: none;
+}
+
+
+.result-box {
+    /*display: inline-block;*/
+    margin-top: 20px;
+    min-width: 800px;
+    border: var(--main-green) 1px solid;
+    padding: 24px;
+}
+
+.link {
+    margin-bottom: 16px;
+}
+.link p {
+    margin-bottom: 4px;
+}
+
+.link p:last-child {
+    margin-bottom: 0;
+}
+
+.link a:visited {
+    color: var(--main-red);
+}
