@@ -50,6 +50,12 @@ table {
     padding: 0;
 }
 
+::selection {
+    color: var(--background-color);
+    background-color: var(--main-red);
+}
+
+
 :root {
     --main-green: #137C1D;
     --background-color: black;
@@ -61,14 +67,14 @@ a {
     color: var(--main-green);
 }
 
-
 body {
+
     color: var(--main-green);
     background-color: var(--background-color);
 }
 
 header {
-    position: fixed;
+    position: sticky;
     left: 0;
     top: 0;
     background-color: var(--background-color);
@@ -103,7 +109,7 @@ main, header .container {
 }
 
 main {
-    margin-top: 120px;
+    margin-top: 80px;
 }
 
 
