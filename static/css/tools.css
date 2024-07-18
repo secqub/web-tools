@@ -1,6 +1,4 @@
 
-
-
 main, header .container {
     margin: 0;
 }
@@ -24,6 +22,7 @@ main .title {
     margin-top: 64px;
     font-size: 32px;
 }
+
 aside {
     display: inline-block;
     min-width: 256px;
@@ -39,6 +38,23 @@ aside {
     padding: 12px 8px;
 }
 
+aside .tools a {
+    cursor: pointer;
+}
+
+
+.aside-links {
+    margin-top: 16px;
+}
+.aside-search {
+    background-color: var(--background-color);
+    color: var(--main-green);
+    border: 1px solid var(--main-green);
+    width: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+    outline: none;
+}
 
 .tool {
     border-bottom: var(--main-green) 1px solid;
@@ -49,6 +65,7 @@ aside {
     color: var(--background-color);
     background-color: var(--main-green);
 }
+
 .active {
     color: var(--background-color);
     background-color: var(--main-green);

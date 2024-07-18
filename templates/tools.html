@@ -11,27 +11,23 @@
     <main>
         <aside>
             <div class="tools">
-                <a href="#">
-                    <div class="tool">Nmap</div>
-                </a>
-                <a href="{% url 'core:searchmap:index' %}">
-                    <div class="tool">searchmap</div>
-                </a>
-                <a href="#">
-                    <div class="tool">dirsearch</div>
-                </a>
-                <a href="#">
-                    <div class="tool">gobuster</div>
-                </a>
-                <a href="#">
-                    <div class="tool">amass</div>
-                </a>
-                <a href="#">
-                    <div class="tool">subfinder</div>
-                </a>
-                <a href="#">
-                    <div class="tool">whatweb</div>
-                </a>
+                <label>
+                    <input placeholder="search software" type="text"
+                           hx-get="{% url 'core:search' %}"
+                           hx-target=".aside-links"
+                           hx-trigger="keyup delay:100ms"
+                           name="aside-search"
+                           class="aside-search"
+                    >
+                </label>
+                <div class="aside-links">
+                    {% for k, v in bar.items %}
+                        <a hx-get="{{ v }}"
+                           hx-target="#main">
+                            <div class="tool">{{ k }}</div>
+                        </a>
+                    {% endfor %}
+                </div>
             </div>
         </aside>
 

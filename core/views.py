@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from .utils import software
 
 
 # Create your views here.
@@ -7,4 +8,19 @@ def index(request):
 
 
 def tools(request):
-    return render(request, 'tools.html')
+    context = {
+        'bar': software
+    }
+
+    return render(request, 'tools.html', context)
+
+
+def tools_search(request):
+    text = request.GET.get('aside-search')
+
+    bar = {i: software[i] for i in software if text in i.lower()}
+    context = {
+        'bar': bar,
+    }
+
+    return render(request, 'partials/aside.html', context)

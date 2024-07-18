@@ -13,7 +13,7 @@ def search(request):
 
     context = {
         'title': text,
-        'result': ds.search_api(text)
+        'result': ds.search_api(text) if text else ''
     }
 
     return render(request, 'partials/searchmap_result_box.html', context=context)
