@@ -1,105 +1,87 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="../static/css/base.css">
-    <link rel="stylesheet" href="../static/css/tools.css">
-    <link rel="stylesheet" href="../static/css/tool-detail.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap"
-          rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,100..900;1,100..900&display=swap"
-          rel="stylesheet">
-    <title>Title</title>
-</head>
-<body>
+{% extends 'base.html' %}
+{% load static %}
 
-<header>
-    <div class="container">
-        <nav class="header-items">
-            <a class='header-item' href="#">Main</a>
-            <a class='header-item' href="#">Tools list</a>
-        </nav>
-    </div>
-</header>
+{% block styles %}
+    <link rel="stylesheet" href="{% static 'css/tools.css' %}">
+    <link rel="stylesheet" href="{% static 'css/tool-detail.css' %}">
+{% endblock %}
+{% block title %}Tools{% endblock %}
 
-
-<main>
-    <aside>
-        <div class="tools">
-            <a href="#">
-                <div class="tool">Nmap</div>
-            </a>
-            <a href="#">
-                <div class="tool fill">searchmap</div>
-            </a>
-            <a href="#">
-                <div class="tool">dirsearch</div>
-            </a>
-            <a href="#">
-                <div class="tool">gobuster</div>
-            </a>
-            <a href="#">
-                <div class="tool">amass</div>
-            </a>
-            <a href="#">
-                <div class="tool">subfinder</div>
-            </a>
-            <a href="#">
-                <div class="tool">whatweb</div>
-            </a>
-        </div>
-    </aside>
+{% block content %}
+    <main>
+        <aside>
+            <div class="tools">
+                <a href="#">
+                    <div class="tool">Nmap</div>
+                </a>
+                <a href="#">
+                    <div class="tool fill">searchmap</div>
+                </a>
+                <a href="#">
+                    <div class="tool">dirsearch</div>
+                </a>
+                <a href="#">
+                    <div class="tool">gobuster</div>
+                </a>
+                <a href="#">
+                    <div class="tool">amass</div>
+                </a>
+                <a href="#">
+                    <div class="tool">subfinder</div>
+                </a>
+                <a href="#">
+                    <div class="tool">whatweb</div>
+                </a>
+            </div>
+        </aside>
 
 
-    <div class="container">
-        <h1 class="title">
-            searchmap
-        </h1>
+        <div class="container">
+            <h1 class="title">
+                searchmap
+            </h1>
 
-        <label>
-            <input class="search" placeholder="search..." type="text">
-        </label>
+            <label>
+                <input class="search" placeholder="search..." type="text">
+            </label>
 
-        <div class="tool-container">
-            <label for="result">SQL INJECTION</label>
-            <div id="result" class="result-box">
-                <div class="link">
-                    <p>1. asodoad</p>
-                    <a href="https://teletype.in/@shirinov039/Sqlinjection" target="_blank">https://teletype.in/@shirinov039/Sqlinjection</a>
-                </div>
-                <div class="link">
-                    <p>1. asodoad</p>
-                    <a href="https://teletype.in/@shirinov039/Sqlinjection" target="_blank">https://teletype.in/@shirinov039/Sqlinjection</a>
-                </div>
-                <div class="link">
-                    <p>1. asodoad</p>
-                    <a href="https://teletype.in/@shirinov039/Sqlinjection" target="_blank">https://teletype.in/@shirinov039/Sqlinjection</a>
-                </div>
-                <div class="link">
-                    <p>1. asodoad</p>
-                    <a href="https://teletype.in/@shirinov039/Sqlinjection" target="_blank">https://teletype.in/@shirinov039/Sqlinjection</a>
-                </div>
-                <div class="link">
-                    <p>1. asodoad</p>
-                    <a href="https://teletype.in/@shirinov039/Sqlinjection" target="_blank">https://teletype.in/@shirinov039/Sqlinjection</a>
-                </div>
-                <div class="link">
-                    <p>1. asodoad</p>
-                    <a href="https://teletype.in/@shirinov039/Sqlinjection" target="_blank">https://teletype.in/@shirinov039/Sqlinjection</a>
-                </div>
-                <div class="link">
-                    <p>1. asodoad</p>
-                    <a href="https://teletype.in/@shirinov039/Sqlinjection" target="_blank">https://teletype.in/@shirinov039/Sqlinjection</a>
-                </div>
-                <div class="link">
-                    <p>1. asodoad</p>
-                    <a href="https://teletype.in/@shirinov039/Sqlinjection" target="_blank">https://teletype.in/@shirinov039/Sqlinjection</a>
+            <div class="tool-container">
+                <label for="result">SQL INJECTION</label>
+                <div id="result" class="result-box">
+                    <div class="link">
+                        <p>1. asodoad</p>
+                        <a href="https://teletype.in/@shirinov039/Sqlinjection" target="_blank">https://teletype.in/@shirinov039/Sqlinjection</a>
+                    </div>
+                    <div class="link">
+                        <p>1. asodoad</p>
+                        <a href="https://gogo.pel/@shirinov039/Sqlinjection" target="_blank">https://teletype.in/@shirinov039/Sqlinjection</a>
+                    </div>
+                    <div class="link">
+                        <p>1. asodoad</p>
+                        <a href="https://teletype.in/@shirinov039/Sqlinjection" target="_blank">https://teletype.in/@shirinov039/Sqlinjection</a>
+                    </div>
+                    <div class="link">
+                        <p>1. asodoad</p>
+                        <a href="https://teletype.in/@shirinov039/Sqlinjection" target="_blank">https://teletype.in/@shirinov039/Sqlinjection</a>
+                    </div>
+                    <div class="link">
+                        <p>1. asodoad</p>
+                        <a href="https://teletype.in/@shirinov039/Sqlinjection" target="_blank">https://teletype.in/@shirinov039/Sqlinjection</a>
+                    </div>
+                    <div class="link">
+                        <p>1. asodoad</p>
+                        <a href="https://teletype.in/@shirinov039/Sqlinjection" target="_blank">https://teletype.in/@shirinov039/Sqlinjection</a>
+                    </div>
+                    <div class="link">
+                        <p>1. asodoad</p>
+                        <a href="https://teletype.in/@shirinov039/Sqlinjection" target="_blank">https://teletype.in/@shirinov039/Sqlinjection</a>
+                    </div>
+                    <div class="link">
+                        <p>1. asodoad</p>
+                        <a href="https://teletype.in/@shirinov039/Sqlinjection" target="_blank">https://teletype.in/@shirinov039/Sqlinjection</a>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-</main>
+    </main>
+{% endblock %}
