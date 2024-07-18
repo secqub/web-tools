@@ -1,0 +1,17 @@
+<label for="result-box">{{ title }}</label>
+
+
+<div id="result-box" class="result-box">
+    {% if result %}
+        {% for res in result %}
+            <div class="link">
+                <p>{{ res.number }}. {{ res.title }}</p>
+                <a href="{{ res.link }}" target="_blank">{{ res.link }}</a>
+            </div>
+        {% endfor %}
+
+    {% else %}
+        Nothing
+    {% endif %}
+
+</div>

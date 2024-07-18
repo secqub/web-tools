@@ -1,0 +1,19 @@
+<div class="container">
+    <h1 class="title">
+        searchmap
+    </h1>
+
+    <label>
+        <input class="search" placeholder="search..." type="text"
+               hx-get="{% url 'core:searchmap:search' %}"
+               hx-target="#result"
+               hx-trigger="keyup delay:500ms"
+               name="searchmap"
+        >
+
+    </label>
+
+    <div id="result" class="tool-container">
+
+    </div>
+</div>
