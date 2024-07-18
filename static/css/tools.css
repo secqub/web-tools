@@ -49,7 +49,7 @@ aside {
     color: var(--background-color);
     background-color: var(--main-green);
 }
-.fill {
+.active {
     color: var(--background-color);
     background-color: var(--main-green);
 }

@@ -1,19 +1,26 @@
-<div class="container">
-    <h1 class="title">
-        searchmap
-    </h1>
+{% extends 'tools.html' %}
 
-    <label>
-        <input class="search" placeholder="search..." type="text"
-               hx-get="{% url 'core:searchmap:search' %}"
-               hx-target="#result"
-               hx-trigger="keyup delay:500ms"
-               name="searchmap"
-        >
+{% block tool-container %}
+    <div class="container">
+        <h1 class="title">
+            searchmap
+        </h1>
 
-    </label>
+        <label>
+            <input class="search" placeholder="search..." type="text"
+                   hx-get="{% url 'core:searchmap:search' %}"
+                   hx-target="#result"
+                   hx-trigger="keyup delay:500ms"
+                   name="searchmap"
+            >
 
-    <div id="result" class="tool-container">
+        </label>
 
+        <div id="result" class="tool-container">
+
+            <div id="result-box" class="result-box">
+                just start typing, i know, you can!
+            </div>
+        </div>
     </div>
-</div>
+{% endblock %}

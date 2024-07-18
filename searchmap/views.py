@@ -4,7 +4,7 @@ from .api import DorksSearch
 
 # Create your views here.
 def index(request):
-    return render(request, 'tools.html')
+    return render(request, 'partials/searchmap_page.html')
 
 
 def search(request):
