@@ -1,29 +1,35 @@
 from django.shortcuts import render
 from django.views.decorators.cache import cache_page
+from django.views.generic import TemplateView
 
 from .utils import software
 
 
 # Create your views here.
-@cache_page(60 * 2)
-def index(request):
-    return render(request, 'index.html')
+@cache_page(60 * 10)
+class IndexView(TemplateView):
+    template_name = 'index.html'
 
 
-def tools(request):
-    context = {
-        'bar': software
-    }
+class ToolsView(TemplateView):
+    template_name = 'tools.html'
 
-    return render(request, 'tools.html', context)
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['bar'] = software
+        return context
 
 
-def tools_search(request):
-    text = request.GET.get('aside-search')
+class ToolsSearchView(TemplateView):
+    template_name = 'partials/aside.html'
 
-    bar = {i: software[i] for i in software if text in i.lower()}
-    context = {
-        'bar': bar,
-    }
+    def get_context_data(self, **kwargs):
+        text = self.request.GET.get('aside-search').lower()
+        if text:
+            bar = {i: software[i] for i in software if text in i.lower()}
+        else:
+            bar = software
 
-    return render(request, 'partials/aside.html', context)
+        context = super().get_context_data(**kwargs)
+        context['bar'] = bar
+        return context
