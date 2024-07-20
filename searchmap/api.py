@@ -77,5 +77,3 @@ class DorksSearch:
                       "\nФормат: ГГГГ-ММ-ДД"
                       "\nПример: 2023-01-01\n")
 
-ds = DorksSearch()
-ds.search_api('popa')
