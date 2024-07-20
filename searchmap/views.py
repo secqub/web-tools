@@ -1,19 +1,24 @@
 from django.shortcuts import render
+from django.views.generic import TemplateView
+
 from .api import DorksSearch
+from django.core.cache import cache
 
 
-# Create your views here.
-def index(request):
-    return render(request, 'partials/searchmap_page.html')
+class IndexView(TemplateView):
+    template_name = 'partials/searchmap_page.html'
 
 
-def search(request):
-    ds = DorksSearch()
-    text = request.GET.get('searchmap', '')
+class SearchView(TemplateView):
+    template_name = 'partials/searchmap_result_box.html'
 
-    context = {
-        'title': text,
-        'result': ds.search_api(text) if text else ''
-    }
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        query = self.request.GET.get('searchmap')
+        ds = DorksSearch()
+        result = ds.search_api(query) if query else ''
 
-    return render(request, 'partials/searchmap_result_box.html', context=context)
+        context['title'] = query
+        context['result'] = result
+        return context
+

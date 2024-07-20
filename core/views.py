@@ -1,8 +1,11 @@
 from django.shortcuts import render
+from django.views.decorators.cache import cache_page
+
 from .utils import software
 
 
 # Create your views here.
+@cache_page(60 * 2)
 def index(request):
     return render(request, 'index.html')
 

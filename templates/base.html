@@ -1,4 +1,5 @@
 {% load static %}
+{% load cache %}
 
 <!DOCTYPE html>
 <html lang="en">
@@ -12,24 +13,28 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,100..900;1,100..900&display=swap"
           rel="stylesheet">
-    <script src="https://unpkg.com/htmx.org@2.0.1" integrity="sha384-QWGpdj554B4ETpJJC9z+ZHJcA/i59TyjxEPXiiUgN2WmTyV5OEZWCD6gQhgkdpB/" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/htmx.org@2.0.1"
+            integrity="sha384-QWGpdj554B4ETpJJC9z+ZHJcA/i59TyjxEPXiiUgN2WmTyV5OEZWCD6gQhgkdpB/"
+            crossorigin="anonymous"></script>
 
 
     <link rel="stylesheet" href="{% static 'css/base.css' %}">
     {% block styles %}{% endblock %}
-    
+
     <title>{% block title %}{% endblock %}</title>
 </head>
 <body>
 
-<header>
-    <div class="container">
-        <nav class="header-items">
-            <a class='header-item' href="{% url 'core:index' %}">Main</a>
-            <a class='header-item' href="{% url 'core:tools' %}">Tools list</a>
-        </nav>
-    </div>
-</header>
+{% cache 10 header %}
+    <header>
+        <div class="container">
+            <nav class="header-items">
+                <a class='header-item' href="{% url 'core:index' %}">Main</a>
+                <a class='header-item' href="{% url 'core:tools' %}">Tools list</a>
+            </nav>
+        </div>
+    </header>
+{% endcache %}
 
 {% block content %}
 
