@@ -6,7 +6,7 @@ from .utils import software
 
 
 # Create your views here.
-@cache_page(60 * 10)
+# @cache_page(60 * 10)
 class IndexView(TemplateView):
     template_name = 'index.html'
 

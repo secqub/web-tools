@@ -47,27 +47,12 @@ class DorksSearch:
     def search_api(self, io):
         sites_dorks = ' | '.join([f'site:{site}' for site, value in sites_dict.items() if value])
         after = f"after:{self._date} " if self._date else ''
-        dorks_payload = f'{after} ({io} | intext:({io})) {sites_dorks}'
+        dorks_payload = f'after:{after} {io} {sites_dorks}'
+        # dorks_payload = f'{after} ({io} | intext:({io})) {sites_dorks}'
+
         # СТАРЫЙ ЗАПРОС
         # dorks_payload = f"{io} | intext:({io}) {' | '.join([f'site:{site}' for site, value in sites_dict.items() if value])} {f"AFTER:{self._date}" if self._date else None}"
         return self.search(dorks_payload)
-
-    def settings_api(self):
-        while True:
-            print()
-            print('` ~ ~ - - - Настройки - - - ~ ~ `\n'
-                  f'Использовать такие сайты как: ')
-            for i, (site, value) in enumerate(sites_dict.items(), start=1):
-                print(f'{i}. {site} | {value}')
-            print('0. Назад')
-            choice = input('Выберите действие: ')
-            if choice == '0':
-                print()
-                break
-            if choice.isdecimal() and int(choice) > 0:
-                sites = list(sites_dict)
-                site = sites[int(choice) - 1]
-                sites_dict[site] = not sites_dict[site]
 
     def set_data_api(self):
         while True:
@@ -91,40 +76,6 @@ class DorksSearch:
                 print("\nВы ввели неправильный формат даты,"
                       "\nФормат: ГГГГ-ММ-ДД"
                       "\nПример: 2023-01-01\n")
-
-    def get_dorks_api(self):
-        print()
-        io = input('Введите запрос: ')
-
-        sites_dorks = ' | '.join([f'site:{site}' for site, value in sites_dict.items() if value])
-        after = f"after:{self._date} " if self._date else ''
-        dorks_payload = f'{after} ({io} | intext:({io})) {sites_dorks}'
-        print(dorks_payload)
-
-    def interface(self):
-        while True:
-            print()
-            print('~ * - * - Меню - * - * ~')
-            print('1. Поиск')
-            print('2. Настройки')
-            print(f'3. Сортировать по дате')
-            print(f'4. Дорк пэйлоад')
-            if self._date:
-                print('5. Очистить дату')
-
-            choice = input('Выберите действие: ')
-            match choice:
-                case '1':
-                    self.search_api()
-                case '2':
-                    self.settings_api()
-                case '3':
-                    self.set_data_api()
-                case '4':
-                    self.get_dorks_api()
-                case '5':
-                    self._date = None
-
 
 ds = DorksSearch()
 ds.search_api('popa')
